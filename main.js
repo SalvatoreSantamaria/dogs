@@ -1,8 +1,12 @@
 const API_URL = 'https://dog.ceo/api/breeds/image/random/3';
 const randomDogsElement = document.querySelector('.random-dogs');
 const loadButton = document.querySelector('.load-button');
-const houndButton = document.querySelector('.hound-button');
-const bulldogButton = document.querySelector('.bulldog-button');
+
+const dingoButton = document.querySelector('.dingo-button');
+const vizslaButton = document.querySelector('.vizsla-button');
+const labradorButton = document.querySelector('.labrador-button');
+const beagleButton = document.querySelector('.beagle-button');
+const boxerButton = document.querySelector('.boxer-button');
 //let API_URL2
 //let breed
 
@@ -111,16 +115,30 @@ loadButton.addEventListener('click', getRandomDogs);
 //houndButton.addEventListener('click', switchBreed);
 
 
-houndButton.addEventListener('click', function() {
-  let dog = 'hound'
+dingoButton.addEventListener('click', function() {
+  let dog = 'dingo'
   switchBreed(dog) //stopped here
 });
 
-bulldogButton.addEventListener('click', function() {
-  let dog = 'bulldog'
+vizslaButton.addEventListener('click', function() {
+  let dog = 'vizsla'
   switchBreed(dog)
 });
 
+labradorButton.addEventListener('click', function() {
+  let dog = 'labrador'
+  switchBreed(dog) //stopped here
+});
+
+beagleButton.addEventListener('click', function() {
+  let dog = 'beagle'
+  switchBreed(dog)
+});
+
+boxerButton.addEventListener('click', function() {
+  let dog = 'boxer'
+  switchBreed(dog)
+});
 
 
 
