@@ -31,18 +31,14 @@ async function getRandomDogs2(API_URL2) {
   json.message.forEach(dogImage => {
     console.log(dogImage.split('/'))
     let dogBreed = dogImage.split('/')[4]
-    console.log(dogBreed)
-  //   randomDogsElement.innerHTML += `
-  //   <div class="grid-container">
-  //     <div>
-  //       <img src="${dogImage}" alt="Placeholder image">
-  //     </div>    
-  //     <div class="dog-name">
-  //       <p>${dogBreed}</p>
-  //     </div>
-  //   </div>
-  //   `;
-  // });
+
+
+
+
+
+
+    //console.log(dogBreed)
+
 
   randomDogsElement.innerHTML += `
   <div class="row">
@@ -61,7 +57,7 @@ async function getRandomDogs2(API_URL2) {
   </div>
   `;
 });
-  loadingElement.style.display = 'none';
+
 }
 
 //og
@@ -75,19 +71,24 @@ async function getRandomDogs() {
   // output three random dogs, with the dog names. get dog names from URL
   json.message.forEach(dogImage => {
     console.log(dogImage.split('/'))
-    let dogBreed = dogImage.split('/')[4]
+    let dogBreed = dogImage.split('/')[4] 
+    dogBreed = dogBreed[0].toUpperCase() + dogBreed.slice(1)
+
     console.log(dogBreed)
-  //   randomDogsElement.innerHTML += `
-  //   <div class="grid-container">
-  //     <div>
-  //       <img src="${dogImage}" alt="Placeholder image">
-  //     </div>    
-  //     <div class="dog-name">
-  //       <p>${dogBreed}</p>
-  //     </div>
-  //   </div>
-  //   `;
-  // });
+
+    for (let i of dogBreed) {
+      if (i == "-") {
+        console.log('dash in dogBreed ' + dogBreed)
+  
+        let array = dogBreed.split('-')
+        console.log('this is array ' + array)
+        
+        dogBreed =  array[1][0].toUpperCase() + array[1].slice(1) + ' ' + array[0][0].toUpperCase() + array[0].slice(1) 
+        console.log('this is output ' + dogBreed)
+      }
+    }
+
+
 
   randomDogsElement.innerHTML += `
   <div class="row">
@@ -106,7 +107,7 @@ async function getRandomDogs() {
   </div>
   `;
 });
-  loadingElement.style.display = 'none';
+
 }
 
 
