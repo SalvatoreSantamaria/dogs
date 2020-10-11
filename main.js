@@ -29,9 +29,7 @@ async function getDogByBreed(API_URL_BY_BREED) {
     <div class="row">
       <div class="col-sm-6">
         <div class="dog-container">
-          <div class="image-container">
-            <img src="${dogImage}" alt="Picture of a dog">
-          </div>
+          <img src="${dogImage}" alt="Picture of a dog">
         </div>
       </div>    
       <div class="col-sm-6">
