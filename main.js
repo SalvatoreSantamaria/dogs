@@ -11,8 +11,6 @@ const boxerButton = document.querySelector('.boxer-button');
 function switchBreed(input) {
   let breed = input;
   let API_URL_BY_BREED = `https://dog.ceo/api/breed/${breed}/images/random/3`
-  console.log('this is breed ' + breed)
-  console.log('this is API URL2 ' + API_URL_BY_BREED)
   getDogByBreed(API_URL_BY_BREED)
 }
 
@@ -21,7 +19,6 @@ async function getDogByBreed(API_URL_BY_BREED) {
   const response = await fetch(API_URL_BY_BREED);
   const json = await response.json();
   json.message.forEach(dogImage => {
-    console.log(dogImage.split('/'))
     let dogBreed = dogImage.split('/')[4]
     dogBreed = dogBreed[0].toUpperCase() + dogBreed.slice(1)
 
